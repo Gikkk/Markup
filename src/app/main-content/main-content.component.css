@@ -1,0 +1,11 @@
+svg{
+  fill: #fff;
+  width: 120px;
+}
+
+@media (min-width: 64em){
+  svg{
+      width: 150px;
+      height: 30px;
+  }
+}

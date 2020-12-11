@@ -1,3 +1,4 @@
+/* footer navbar section  */
 .navbar{
   text-align: center;
   border-top: 1px solid #222;
@@ -19,6 +20,21 @@
   padding: 0.4em;
 }
 
+/* footer social icons section  */
+.social{
+  list-style: none;
+  padding: 24px 0 34px 0;
+  display: flex;
+  justify-content: center;
+}
+
+
+.social__icon{
+  fill: #c39d42;
+  margin: 0.6rem;
+}
+
+/* footer text section  */
 .footer{
   text-align: center;
   border-top: 1px solid #222;
@@ -59,17 +75,4 @@
   color: white;
   margin: 0;
   text-decoration: none;
-}
-
-.social{
-  list-style: none;
-  padding: 24px 0 34px 0;
-  display: flex;
-  justify-content: center;
-}
-
-
-.social__icon{
-  fill: #c39d42;
-  margin: 0.7rem;
 }

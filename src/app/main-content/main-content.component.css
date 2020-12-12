@@ -17,56 +17,8 @@
   }
 }
 
-@keyframes tonext {
-  75% {
-    bottom: 0;
-  }
-  95% {
-    bottom: 100%;
-  }
-  98% {
-    bottom: 100%;
-  }
-  99% {
-    bottom: 0;
-  }
-}
-
-@keyframes tostart {
-  75% {
-    bottom: 0;
-  }
-  95% {
-    bottom: -300%;
-  }
-  98% {
-    bottom: -300%;
-  }
-  99% {
-    bottom: 0;
-  }
-}
-
-@keyframes snap {
-  96% {
-    scroll-snap-align: center;
-  }
-  97% {
-    scroll-snap-align: none;
-  }
-  99% {
-    scroll-snap-align: none;
-  }
-  100% {
-    scroll-snap-align: center;
-  }
-}
-
-.body {
-  max-width: 37.5rem;
-  height: 100vh;
-}
-*{
+* {
+  box-sizing: border-box;
   scrollbar-color: transparent transparent;
   scrollbar-width: 0px;
 }
@@ -84,19 +36,13 @@
   border: none;
 }
 
-* {
+/* * {
   -ms-overflow-style: none;
-}
-
-ol, li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
+} */
 
 .carousel {
   position: relative;
-  padding-top: 75%;
+  height: 100vh;
   filter: drop-shadow(0 0 10px #0003);
   perspective: 100px;
 }
@@ -107,111 +53,64 @@ ol, li {
   right: 0;
   bottom: 0;
   left: 0;
-  display: flex;
   overflow-x: scroll;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .carousel__slide {
   position: relative;
   flex: 0 0 100%;
-  width: 100%;
   height: 100%;
-  background: url("../../assets/640xauto/Fuoripista-Cover-M2.jpg");
+  width: 100%;
+  background: url("../../assets/640xauto/Fuoripista-Cover-M2.jpg") no-repeat center;
+  background-size: cover;
+  outline: none;
 }
 
 .carousel__slide:nth-child(2){
-  background: url("../../assets/640xauto/Fuoripista-Bike-M.jpg");
+  background: url("../../assets/640xauto/Fuoripista-Bike-M.jpg") no-repeat center;
+  background-size: cover;
 }
 
 .carousel__slide:nth-child(3){
-  background: url("../../assets/640xauto/Fuoripista-Tuo-M2.jpg");
+  background: url("../../assets/640xauto/Fuoripista-Tuo-M2.jpg") no-repeat center;
+  background-size: cover;
 }
 
 .carousel__slide:nth-child(4){
-  background: url("../../assets/640xauto/Fuoripista-Mia-M.jpg");
-}
-
-.carousel__snapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  scroll-snap-align: center;
-}
-
-@media (hover: hover) {
-  .carousel__snapper {
-    animation-name: tonext, snap;
-    animation-timing-function: ease;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
-  }
-
-  .carousel__slide:last-child .carousel__snapper {
-    animation-name: tostart, snap;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .carousel__snapper {
-    animation-name: none;
-  }
-}
-
-.carousel:hover .carousel__snapper,
-.carousel:focus-within .carousel__snapper {
-  animation-name: none;
+  background: url("../../assets/640xauto/Fuoripista-Mia-M.jpg") no-repeat center;
+  background-size: cover;
 }
 
 .carousel__navigation {
   position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  text-align: center;
-}
-
-.carousel__navigation-list,
-.carousel__navigation-item {
-  display: inline-block;
+  bottom: 30px;
+  left: 30px;
 }
 
 .carousel__navigation-button {
   display: inline-block;
-  width: 1rem;
-  height: 1rem;
-  background-color: #333;
-  background-clip: content-box;
-  border: 0.25rem solid transparent;
+  width: 4px;
+  height: 4px;
+  background-color: #fff;
+  opacity: .2;
+  transition: all .6s;
   border-radius: 50%;
   font-size: 0;
-  transition: transform 0.1s;
 }
 
-.carousel::before,
-.carousel__prev {
-  left: -1rem;
+.carousel__navigation-list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.carousel::after,
-.carousel__next {
-  right: -1rem;
-}
-
-.carousel::before,
-.carousel::after {
-  content: '';
-  z-index: 1;
-  background-color: #333;
-  background-size: 1.5rem 1.5rem;
-  background-repeat: no-repeat;
-  background-position: center center;
-  color: #fff;
-  font-size: 2.5rem;
-  line-height: 4rem;
-  text-align: center;
-  pointer-events: none;
+.carousel__navigation-button:active{
+  background: #c39d42;
+  transform: scale(2);
+  opacity: 1;
 }

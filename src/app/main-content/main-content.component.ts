@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener} from '@angular/core';
 
 @Component({
   selector: 'app-main-content',
@@ -11,25 +11,30 @@ export class MainContentComponent implements OnInit {
 
   }
 
+  @HostListener('window:resize', ['$event'])
+  onResize(event){
+    let myHeight = event.target.innerHeight;
+    document.querySelector(".carousel__viewport").setAttribute("style",`height:${myHeight + 17}px`);
+  }
+
+
+  onMouseWheel(evt) {
+    if(evt.deltaY < 0){
+      console.log("up");
+    }else{
+      console.log('Down');
+    }
+  }
+
   ngOnInit(): void {
-    // window.addEventListener('wheel', function(event){
-    //   if (event.deltaY < 0){
-    //     console.log('scrolling up');
-    //   }
-    //   else if (event.deltaY > 0)
-    //   {
-    //     console.log('scrolling down');
-    //   }
-    // });
 
     (function() {
-      window.onresize = displayWindowSize;
       window.onload = displayWindowSize;
 
       function displayWindowSize() {
-        let myHeight = window.innerHeight;
-        document.querySelector(".carousel__viewport").setAttribute("style",`height:${myHeight + 17}px`);
+        document.querySelector(".carousel__viewport").setAttribute("style",`height:${window.innerHeight + 18}px`);
       };
     })();
+
   }
 }

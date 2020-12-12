@@ -18,7 +18,6 @@
 }
 
 * {
-  box-sizing: border-box;
   scrollbar-color: transparent transparent;
   scrollbar-width: 0px;
 }
@@ -36,9 +35,9 @@
   border: none;
 }
 
-/* * {
+* {
   -ms-overflow-style: none;
-} */
+}
 
 .carousel {
   position: relative;

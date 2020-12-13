@@ -18,7 +18,7 @@ export class MainContentComponent implements OnInit {
   }
 
 
-  onMouseWheel(evt) {
+  onWheel(evt) {
     if(evt.deltaY < 0){
       console.log("up");
     }else{
@@ -27,14 +27,47 @@ export class MainContentComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
     (function() {
       window.onload = displayWindowSize;
 
       function displayWindowSize() {
-        document.querySelector(".carousel__viewport").setAttribute("style",`height:${window.innerHeight + 18}px`);
+        document.querySelector(".carousel__viewport").setAttribute("style",`height:${window.innerHeight + 17}px`);
       };
     })();
 
+    let test = document.querySelector(".carousel__viewport");
+    test.addEventListener("wheel", function(e){
+      handleMouseWheelDirection( detectMouseWheelDirection( e ) );
+    });
+
+    function detectMouseWheelDirection( e ){
+      e.preventDefault()
+      let delta = null,
+      direction:any = false;
+
+      if ( e.wheelDelta ) {
+          delta = e.wheelDelta / 60;
+      } else if ( e.detail ) {
+          delta = -e.detail / 2;
+      }
+      if ( delta !== null ) {
+          direction = delta > 0 ? 'up' : 'down';
+      }
+      return direction;
+    }
+
+    function handleMouseWheelDirection( direction ){
+      if ( direction == 'down' ) {
+        test.scrollBy({
+          top: window.innerHeight,
+          behavior: 'smooth',
+        });
+      } else if ( direction == 'up' ) {
+        test.scrollBy({
+          top: -window.innerHeight,
+          behavior: 'smooth'
+        });
+      }
+    }
   }
 }

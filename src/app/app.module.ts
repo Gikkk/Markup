@@ -5,11 +5,12 @@ import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { MainContentComponent } from './main-content/main-content.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
-    MainContentComponent
+    MainContentComponent,
   ],
   imports: [
     BrowserModule

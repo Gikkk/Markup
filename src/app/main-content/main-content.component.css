@@ -10,13 +10,6 @@
   width: 120px;
 }
 
-@media (min-width: 64em){
-  .logo__img{
-      width: 150px;
-      height: 30px;
-  }
-}
-
 * {
   scrollbar-color: transparent transparent;
   scrollbar-width: 0px;
@@ -68,7 +61,7 @@
   background: url("../../assets/640xauto/Fuoripista-Cover-M2.jpg") no-repeat center;
   background-size: cover;
   outline: none;
-  /* opacity: 0.7; */
+  opacity: 0.9;
 }
 
 .carousel__slide:nth-child(2){
@@ -109,29 +102,35 @@
   margin: 0;
 }
 
-.navigation__button:active{
+.active{
   background: #c39d42;
   transform: scale(2);
   opacity: 1;
 }
 
 /* text and link  */
-.link{
-  text-decoration: none;
+.text__container{
   height: 100%;
-  color: white;
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: 'Domaine Sans Display', sans-serif;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 0 1.875rem;
-  margin-top: 2rem;
   text-align: center;
 }
 
-.link__header{
-  margin: 0 0 .2em 0;
+.main__slide{
+  flex-direction: column;
+}
+
+/* other slide texts */
+.text{
+  color: white;
+  text-decoration: none;
+}
+
+.text__header{
+  margin: 20vh 0 .2em 0;
   font-size: 35px;
   text-transform: uppercase;
   font-weight: 300;
@@ -140,22 +139,106 @@
   transform: translateY(0); */
 }
 
-.link__detail{
+.text__detail{
   font-weight: 300;
   font-size: 24px;
   margin: 0 0 1em 0;
 }
 
-.link__detail--highlighted{
+.text__detail--highlighted{
   display: inline-block;
-  font-family: 'Great Vibes', cursive;
-  font-weight: 400;
-  color: #c39d42;
-  font-size: 170%;
-  vertical-align: middle;
-  position: relative;
-  top: -.05em;
-  letter-spacing: .1em;
-  margin-left: .1em;
-  margin-right: .1em;
+    font-family: 'Hijrnotes PERSONAL USE ONLY';
+    font-weight: 400;
+    color: #c39d42;
+    font-size: 170%;
+    vertical-align: middle;
+    position: relative;
+    top: -.2em;
+    margin-left: .1em;
+    margin-right: .1em;
+}
+
+.text__btn--link{
+  border: 1px solid hsla(0,0%,100%,.2);
+  border-radius: 50%;
+}
+
+.text__btn--main{
+  width: 147px;
+  height: 147px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  border-top: 1px solid #fff;
+  outline: none;
+}
+
+.text__icon--main{
+  height: 40px;
+  width: 40px;
+  fill: white;
+}
+
+.text__btn{
+  background: transparent;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  border: 1px solid #fff;
+  height: 40px;
+  width: 40px;
+}
+
+.text__icon{
+  fill: white;
+  height: 18px;
+  width: 20px;
+  transform: rotate(270deg);
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+/* supporting text */
+.text__header--main{
+  font-size: 30px;
+}
+
+.slide__item{
+  margin: 20vh 0 0 0;
+}
+
+/* supporting text  */
+.line__break{
+  display: none;
+}
+
+
+/* responsive  */
+@media (min-width: 640px){
+  .logo{
+    top: 30px;
+    left: 30px;
+  }
+
+  .navigation{
+    transform: rotate(-90deg) translateX(10%) translateY(40%);
+  }
+
+  /* supporting text  */
+  .line__break{
+    display: block;
+  }
+}
+
+@media (min-width: 1024px){
+  .logo{
+    top: 40px;
+    left: 40px;
+  }
+
+  .logo__img{
+    width: 150px;
+    height: 40px;
+  }
 }

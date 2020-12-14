@@ -76,3 +76,10 @@
   margin: 0;
   text-decoration: none;
 }
+
+
+@media (min-width: 640px){
+  navbar{
+    display: flex;
+  }
+}

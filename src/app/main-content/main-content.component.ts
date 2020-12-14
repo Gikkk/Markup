@@ -19,10 +19,19 @@ export class MainContentComponent implements OnInit {
 
 
   onWheel(evt) {
+    evt.preventDefault();
+    let test = document.querySelector(".carousel__viewport");
+
     if(evt.deltaY < 0){
-      console.log("up");
+      test.scrollBy({
+        top: -window.innerHeight,
+        behavior: 'smooth',
+      });
     }else{
-      console.log('Down');
+      test.scrollBy({
+        top: window.innerHeight,
+        behavior: 'smooth',
+      });
     }
   }
 
@@ -34,40 +43,5 @@ export class MainContentComponent implements OnInit {
         document.querySelector(".carousel__viewport").setAttribute("style",`height:${window.innerHeight + 17}px`);
       };
     })();
-
-    let test = document.querySelector(".carousel__viewport");
-    test.addEventListener("wheel", function(e){
-      handleMouseWheelDirection( detectMouseWheelDirection( e ) );
-    });
-
-    function detectMouseWheelDirection( e ){
-      e.preventDefault()
-      let delta = null,
-      direction:any = false;
-
-      if ( e.wheelDelta ) {
-          delta = e.wheelDelta / 60;
-      } else if ( e.detail ) {
-          delta = -e.detail / 2;
-      }
-      if ( delta !== null ) {
-          direction = delta > 0 ? 'up' : 'down';
-      }
-      return direction;
-    }
-
-    function handleMouseWheelDirection( direction ){
-      if ( direction == 'down' ) {
-        test.scrollBy({
-          top: window.innerHeight,
-          behavior: 'smooth',
-        });
-      } else if ( direction == 'up' ) {
-        test.scrollBy({
-          top: -window.innerHeight,
-          behavior: 'smooth'
-        });
-      }
-    }
   }
 }

@@ -14,7 +14,7 @@ export class MainContentComponent implements OnInit {
   @HostListener('window:resize', ['$event'])
   onResize(event){
     let myHeight = event.target.innerHeight;
-    document.querySelector(".carousel__viewport").setAttribute("style",`height:${myHeight + 17}px`);
+    document.querySelector(".carousel__viewport").setAttribute("style",`height:${myHeight}px`);
   }
 
 
@@ -40,7 +40,7 @@ export class MainContentComponent implements OnInit {
       window.onload = displayWindowSize;
 
       function displayWindowSize() {
-        document.querySelector(".carousel__viewport").setAttribute("style",`height:${window.innerHeight + 17}px`);
+        document.querySelector(".carousel__viewport").setAttribute("style",`height:${window.innerHeight}px`);
       };
     })();
   }

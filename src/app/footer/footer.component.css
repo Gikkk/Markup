@@ -79,7 +79,56 @@
 
 
 @media (min-width: 640px){
-  navbar{
+  .navbar{
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.875rem;
+  }
+
+  .navbar__list{
+    display: flex;
+    margin: 0;
+  }
+
+  .navbar__item{
+    padding: 0.4em 1em;
+  }
+
+  .social{
+    padding: 0;
+  }
+
+  .footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1024px){
+  .navbar{
+    padding: 0 5rem;
+  }
+
+  .navbar__list{
+    padding: 3.75rem 0;
+  }
+
+  .footer{
+    padding: 3.75rem 5rem;
+  }
+
+  .footer__details{
+    display: flex;
+    align-items: center;
+  }
+
+  .footer__icon{
+    margin: 0 1rem 0 0;
+  }
+
+  .footer__text{
+    margin: 0;
   }
 }

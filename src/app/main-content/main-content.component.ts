@@ -1,4 +1,4 @@
-import { Component, ViewChild, AfterViewInit} from '@angular/core';
+import { Component, ViewChild, AfterViewInit, ElementRef, HostListener} from '@angular/core';
 
 
 
@@ -12,7 +12,6 @@ export class MainContentComponent implements AfterViewInit {
   constructor() {}
 
   @ViewChild('scrollHeight') scrollHeight;
-
   onWheel(evt) {
     evt.preventDefault();
     let scrollHeight = this.scrollHeight.nativeElement
@@ -29,6 +28,20 @@ export class MainContentComponent implements AfterViewInit {
       });
     }
   }
+
+  // @ViewChild("testDiv", { static: false }) private testDiv: ElementRef<
+  //   HTMLDivElement
+  // >;
+
+  // @HostListener("window:scroll", ["$event"])
+  // isScrolledIntoView() {
+  //   if (this.testDiv) {
+  //     const rect = this.testDiv.nativeElement.getBoundingClientRect();
+  //     // const topShown = rect.top >= 0;
+  //     // const bottomShown = rect.bottom <= window.innerHeight;
+  //     console.log("in view");
+  //   }
+  // }
 
   ngAfterViewInit(): void {
 

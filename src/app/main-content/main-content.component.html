@@ -6,8 +6,8 @@
 </header>
 
 <!-- slider -->
-<section class="carousel " (wheel)="onWheel($event)">
-  <ol class="carousel__viewport">
+<section class="carousel"  (wheel)="onWheel($event)">
+  <ol class="carousel__viewport" #scrollHeight appMainContent>
     <li id="carousel__slide1" class="carousel__slide">
       <section class="text__container main__slide">
         <p class="slide__item">
@@ -19,10 +19,10 @@
           <span class="text__header text__header--main">design</span>
         </p>
         <p class="text__detail">Un <em class="text__detail--highlighted">progetto</em> di Adriano Design ed Elite</p>
-        <a href="#carousel__slide2" class="text__btn--link">
-          <button class="text__btn--main"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="text__icon--main"><polygon points="24.48 38.08 24.48 1 23.5 1 23.5 38.06 0.5 21.55 0.5 31.13 24 48 47.5 31.13 47.5 21.55 24.48 38.08"/></svg>
+        <div class="text__btn--link">
+          <button class="text__btn--main" (click)="onWheel($event)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="text__icon--main"><polygon points="24.48 38.08 24.48 1 23.5 1 23.5 38.06 0.5 21.55 0.5 31.13 24 48 47.5 31.13 47.5 21.55 24.48 38.08"/></svg>
           </button>
-        </a>
+        </div>
       </section>
     </li>
     <li id="carousel__slide2" class="carousel__slide">
@@ -34,7 +34,7 @@
           </button>
           <section class="additional">
             <p class="additional__text"><em class="additional__text--highlighted">Scopri </em><em class="additional__text--highlighted">Fuoripista </em><em class="additional__text--highlighted">Bike</em></p>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" class="additional__icon"><path d="M15.5 1c-1.5.5-2.6 1-3.4 1.3-3.2 1.5-6.3 3.2-9.2 5.2C1.2 8.6.9 8.9 1 9c.2.2 1.7-.4 4.6-1.5s5.9-2.2 8.8-3.3c2.5-.9 5-1.7 7.5-2.4.8-.2 2.1-.6 2.4-.3.1.1.2.3-1 1.3-1.1.9-2.2 1.6-3.4 2.4-1.4.9-3.2 2.2-2.8 2.6.3.4 2.1.3 3.2 0 .3-.1.6-.2 1-.3 7.9-2.5 16.1-4 24.5-4.4C57.5 2.8 60.2 5.6 68 6.3c6.6.7 22.3-3 31-2.8" fill="none" stroke="#c39d42" stroke-width="2" stroke-linecap="round" stroke-miterlimit="3.998" style="stroke-dashoffset: 0px; stroke-dasharray: 134.176;"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" class="additional__icon"><path class="path" d="M15.5 1c-1.5.5-2.6 1-3.4 1.3-3.2 1.5-6.3 3.2-9.2 5.2C1.2 8.6.9 8.9 1 9c.2.2 1.7-.4 4.6-1.5s5.9-2.2 8.8-3.3c2.5-.9 5-1.7 7.5-2.4.8-.2 2.1-.6 2.4-.3.1.1.2.3-1 1.3-1.1.9-2.2 1.6-3.4 2.4-1.4.9-3.2 2.2-2.8 2.6.3.4 2.1.3 3.2 0 .3-.1.6-.2 1-.3 7.9-2.5 16.1-4 24.5-4.4C57.5 2.8 60.2 5.6 68 6.3c6.6.7 22.3-3 31-2.8" fill="none" stroke="#c39d42" stroke-width="2" stroke-linecap="round" stroke-miterlimit="3.998" style="stroke-dashoffset: 0px; stroke-dasharray: 134.176;"></path></svg>
           </section>
         </a>
       </section>
@@ -47,7 +47,7 @@
           <button class="text__btn"><svg id="arrow-down" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="text__icon"><polygon points="24.48 38.08 24.48 1 23.5 1 23.5 38.06 0.5 21.55 0.5 31.13 24 48 47.5 31.13 47.5 21.55 24.48 38.08"/></svg>
           </button>
           <section class="additional">
-            <p class="additional__text"><em class="additional__text--highlighted">Scopri </em><em class="additional__text--highlighted">Tua</em></p>
+            <p class="additional__text"><em class="additional__text--highlighted">Scopri </em><em class="additional__text--highlighted">Tuo</em></p>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" class="additional__icon"><path d="M15.5 1c-1.5.5-2.6 1-3.4 1.3-3.2 1.5-6.3 3.2-9.2 5.2C1.2 8.6.9 8.9 1 9c.2.2 1.7-.4 4.6-1.5s5.9-2.2 8.8-3.3c2.5-.9 5-1.7 7.5-2.4.8-.2 2.1-.6 2.4-.3.1.1.2.3-1 1.3-1.1.9-2.2 1.6-3.4 2.4-1.4.9-3.2 2.2-2.8 2.6.3.4 2.1.3 3.2 0 .3-.1.6-.2 1-.3 7.9-2.5 16.1-4 24.5-4.4C57.5 2.8 60.2 5.6 68 6.3c6.6.7 22.3-3 31-2.8" fill="none" stroke="#c39d42" stroke-width="2" stroke-linecap="round" stroke-miterlimit="3.998" style="stroke-dashoffset: 0px; stroke-dasharray: 134.176;"></path></svg>
           </section>
         </a>
@@ -68,6 +68,8 @@
       </section>
     </li>
   </ol>
+
+  <!-- navigation buttons  -->
   <aside class="navigation">
     <ol class="navigation__list">
       <li class="navigation__item">
@@ -84,4 +86,5 @@
       </li>
     </ol>
   </aside>
+
 </section>

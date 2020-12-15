@@ -1,47 +1,36 @@
-import { Component, OnInit, HostListener} from '@angular/core';
+import { Component, ViewChild, AfterViewInit} from '@angular/core';
+
+
 
 @Component({
   selector: 'app-main-content',
   templateUrl: './main-content.component.html',
   styleUrls: ['./main-content.component.css']
 })
-export class MainContentComponent implements OnInit {
+export class MainContentComponent implements AfterViewInit {
 
-  constructor() {
+  constructor() {}
 
-  }
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event){
-    let myHeight = event.target.innerHeight;
-    document.querySelector(".carousel__viewport").setAttribute("style",`height:${myHeight}px`);
-  }
-
+  @ViewChild('scrollHeight') scrollHeight;
 
   onWheel(evt) {
     evt.preventDefault();
-    let test = document.querySelector(".carousel__viewport");
+    let scrollHeight = this.scrollHeight.nativeElement
 
     if(evt.deltaY < 0){
-      test.scrollBy({
+      scrollHeight.scrollBy({
         top: -window.innerHeight,
         behavior: 'smooth',
       });
     }else{
-      test.scrollBy({
+      scrollHeight.scrollBy({
         top: window.innerHeight,
         behavior: 'smooth',
       });
     }
   }
 
-  ngOnInit(): void {
-    (function() {
-      window.onload = displayWindowSize;
+  ngAfterViewInit(): void {
 
-      function displayWindowSize() {
-        document.querySelector(".carousel__viewport").setAttribute("style",`height:${window.innerHeight}px`);
-      };
-    })();
   }
 }

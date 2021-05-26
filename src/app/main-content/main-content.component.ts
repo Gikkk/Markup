@@ -29,20 +29,6 @@ export class MainContentComponent implements AfterViewInit {
     }
   }
 
-  // @ViewChild("testDiv", { static: false }) private testDiv: ElementRef<
-  //   HTMLDivElement
-  // >;
-
-  // @HostListener("window:scroll", ["$event"])
-  // isScrolledIntoView() {
-  //   if (this.testDiv) {
-  //     const rect = this.testDiv.nativeElement.getBoundingClientRect();
-  //     // const topShown = rect.top >= 0;
-  //     // const bottomShown = rect.bottom <= window.innerHeight;
-  //     console.log("in view");
-  //   }
-  // }
-
   ngAfterViewInit(): void {
 
   }
